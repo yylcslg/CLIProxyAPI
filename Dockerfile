@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
 
 COPY go.mod go.sum ./
 
+ENV GOPROXY=https://goproxy.cn,direct
+
 RUN go mod download
 
 COPY . .
@@ -28,7 +30,7 @@ COPY config.example.yaml /CLIProxyAPI/config.example.yaml
 
 WORKDIR /CLIProxyAPI
 
-EXPOSE 8317
+EXPOSE 8300
 
 ENV TZ=Asia/Shanghai
 
