@@ -14,4 +14,4 @@ MSG=${1:-'u'}
 
 # 5. 提交并推送到远程仓库
 git commit -m "$MSG"
-git push origin dev
+git push origin yyl_dev
